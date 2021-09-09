@@ -27,7 +27,7 @@ similar version of this API in which you lose the setter but gain destructuring:
 ```jsx
 const [{ name }, setState] = useStore()
 
-return <input value={state.name} onChange={e => setState({ name: e.target.value })} />
+return <input value={name} onChange={e => setState({ name: e.target.value })} />
 ```
 
 
