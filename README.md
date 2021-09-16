@@ -22,12 +22,38 @@ function NameDisplay() {
 
 ---
 
+#### setState
+
 similar version of this API in which you lose the setter but gain destructuring:
 
 ```jsx
 const [{ name }, setState] = useStore()
 
 return <input value={name} onChange={e => setState({ name: e.target.value })} />
+```
+
+---
+
+#### context
+
+React Context version without creating a global store:
+
+```jsx
+import { Provider, useContext } from 'idyl'
+
+function Form() {
+  return (
+    <Provider value={{ name: 'John', username: 'johndoe' }}>
+      <NameDisplay />
+    </Provider>
+  )
+}
+
+function NameDisplay() {
+  const state = useContext()
+  
+  return <input value={state.name} onChange={e => state.name = e.target.value} />
+}
 ```
 
 
