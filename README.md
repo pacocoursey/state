@@ -1,4 +1,4 @@
-# idyl
+# state
 
 merge ideas from zustand + swr + valtio into a simple shared state
 - zustand: create a store (not tied to component)
@@ -39,7 +39,7 @@ return <input value={name} onChange={e => setState({ name: e.target.value })} />
 React Context version without creating a global store:
 
 ```jsx
-import { Provider, useContext } from 'idyl'
+import { Provider, useContext } from 'state'
 
 function Form() {
   return (
